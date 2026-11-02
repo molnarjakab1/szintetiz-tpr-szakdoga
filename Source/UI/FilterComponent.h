@@ -1,4 +1,4 @@
-﻿
+
 
 #pragma once
 
@@ -27,11 +27,14 @@ private:
     std::unique_ptr<Attachment> filterFreqAttachment;
     std::unique_ptr<Attachment> filterResAttachment;
     
-    juce::Label filterSelectorLabel { "Szuro tipus", "Szuro tipus" };
-    juce::Label filterFreqLabel { "Szuro frekvencia", "Szuro frekvencia" };
-    juce::Label filterResLabel { "Szuro felbontas", "Szuro felbontas" };
+    juce::Label filterSelectorLabel { "Filter type", "Filter type" };
+    juce::Label filterFreqLabel { "Filter frequency", "Filter frequency" };
+    juce::Label filterResLabel { "Filter resolution", "Filter resolution" };
+
+    juce::TextButton filterFreqMinus{ "-" }, filterFreqPlus{ "+" };
+    juce::TextButton filterResMinus{ "-" }, filterResPlus{ "+" };
     
-    void setSliderWithLabel (juce::Slider& slider, juce::Label& label, juce::AudioProcessorValueTreeState& apvts, juce::String paramId, std::unique_ptr<Attachment>& attachment);
+    void setSliderWithLabel (juce::Slider& slider, juce::Label& label, juce::AudioProcessorValueTreeState& apvts, juce::String paramId, std::unique_ptr<Attachment>& attachment, juce::TextButton& minusButton, juce::TextButton& plusButton);
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (FilterComponent)
 };

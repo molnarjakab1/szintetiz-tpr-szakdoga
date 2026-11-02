@@ -4,6 +4,8 @@
               addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
   <MAINGROUP id="KMptmw" name="tapSynth">
     <GROUP id="{3C4B8AF0-CC1B-B776-74F0-C1D0B8E63F93}" name="Source">
+      <FILE id="RIAwFc" name="FxSlot.h" compile="0" resource="0" file="Source/FxSlot.h"/>
+      <FILE id="tmbm2o" name="PresetManager.h" compile="0" resource="0" file="Source/PresetManager.h"/>
       <FILE id="cCsQG0" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="RThVF6" name="PluginProcessor.h" compile="0" resource="0"
@@ -30,9 +32,21 @@
               file="Source/UI/FilterComponent.cpp"/>
         <FILE id="yLLnUi" name="FilterComponent.h" compile="0" resource="0"
               file="Source/UI/FilterComponent.h"/>
+        <FILE id="oiFo7R" name="FxComponent.cpp" compile="1" resource="0" file="Source/UI/FxComponent.cpp"/>
+        <FILE id="IjIAF1" name="FxComponent.h" compile="0" resource="0" file="Source/UI/FxComponent.h"/>
+        <FILE id="cQW2OC" name="FxRackComponent.cpp" compile="1" resource="0"
+              file="Source/UI/FxRackComponent.cpp"/>
+        <FILE id="ihQesL" name="FxRackComponent.h" compile="0" resource="0"
+              file="Source/UI/FxRackComponent.h"/>
+        <FILE id="cXW3BP" name="FxSlotComponent.cpp" compile="1" resource="0"
+              file="Source/UI/FxSlotComponent.cpp"/>
+        <FILE id="Ykf7GB" name="FxSlotComponent.h" compile="0" resource="0"
+              file="Source/UI/FxSlotComponent.h"/>
         <FILE id="D3P1YA" name="OscComponent.cpp" compile="1" resource="0"
               file="Source/UI/OscComponent.cpp"/>
         <FILE id="udQwcP" name="OscComponent.h" compile="0" resource="0" file="Source/UI/OscComponent.h"/>
+        <FILE id="KOBk5B" name="PresetSavePopup.h" compile="0" resource="0"
+              file="Source/UI/PresetSavePopup.h"/>
       </GROUP>
     </GROUP>
   </MAINGROUP>
