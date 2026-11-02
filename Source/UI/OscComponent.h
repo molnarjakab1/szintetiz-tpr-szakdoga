@@ -25,11 +25,14 @@ private:
     std::unique_ptr<Attachment> fmFreqAttachment;
     std::unique_ptr<Attachment> fmDepthAttachment;
     
-    juce::Label waveSelectorLabel { "Hullamforma", "Hullamforma" };
-    juce::Label fmFreqLabel { "FM frekvencia", "FM frekvencia" };
-    juce::Label fmDepthLabel { "FM melyseg", "FM melyseg" };
+    juce::Label waveSelectorLabel { "Waveform", "Waveform" };
+    juce::Label fmFreqLabel { "FM frequency", "FM frequency" };
+    juce::Label fmDepthLabel { "FM depth", "FM depth" };
+    juce::TextButton fmFreqMinus{ "-" }, fmFreqPlus{ "+" };
+    juce::TextButton fmDepthMinus{ "-" }, fmDepthPlus{ "+" };
+
     
-    void setSliderWithLabel (juce::Slider& slider, juce::Label& label, juce::AudioProcessorValueTreeState& apvts, juce::String paramId, std::unique_ptr<Attachment>& attachment);
+    void setSliderWithLabel (juce::Slider& slider, juce::Label& label, juce::AudioProcessorValueTreeState& apvts, juce::String paramId, std::unique_ptr<Attachment>& attachment,juce::TextButton& minusButton, juce::TextButton& plusButton);
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (OscComponent)
 };
