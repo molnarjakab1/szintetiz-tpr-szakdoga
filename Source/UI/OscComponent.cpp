@@ -29,14 +29,20 @@ OscComponent::~OscComponent()
 
 void OscComponent::paint (juce::Graphics& g)
 {
-    auto bounds = getLocalBounds().reduced (5);
-    auto labelSpace = bounds.removeFromTop (25.0f);
-    
-    g.fillAll (juce::Colour::fromRGB(30,30,30));
-    g.setColour (juce::Colours::lightgreen);
-    g.setFont (15.0f);
-    g.drawText ("Oscillator", labelSpace.withX (5), juce::Justification::left);
-    g.drawRoundedRectangle (bounds.toFloat(), 5.0f, 1.5f);
+    auto bounds = getLocalBounds().reduced(5);
+    auto labelSpace = bounds.removeFromTop(25.0f);
+
+    juce::ColourGradient gradient(juce::Colour::fromRGB(20, 20, 30),
+        0, 0,
+        juce::Colour::fromRGB(10, 40, 60),
+        0, (float)getHeight(), false);
+    g.setGradientFill(gradient);
+    g.fillRoundedRectangle(bounds.toFloat(), 10.0f);
+    g.setColour(juce::Colours::white);
+    g.setFont(20.0f);
+    g.drawText("Oscillator", labelSpace.withX(5), juce::Justification::left);
+    g.setColour(juce::Colours::white);
+    g.drawRoundedRectangle(bounds.toFloat(), 10.0f, 2.0f);
 }
 
 void OscComponent::resized()
@@ -103,7 +109,7 @@ void OscComponent::setSliderWithLabel(juce::Slider& slider,
 
     attachment = std::make_unique<Attachment>(apvts, paramId, slider);
 
-    label.setColour(juce::Label::textColourId, juce::Colours::lightgreen);
+    label.setColour(juce::Label::textColourId, juce::Colours::white);
     label.setFont(juce::Font(13.0f, juce::Font::bold));
     label.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(label);

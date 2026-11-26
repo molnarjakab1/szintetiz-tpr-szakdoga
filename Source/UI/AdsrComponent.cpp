@@ -29,11 +29,13 @@ void AdsrComponent::paint(juce::Graphics& g)
         juce::Colour::fromRGB(10, 40, 60),
         0, (float)getHeight(), false);
     g.setGradientFill(gradient);
+    g.fillRoundedRectangle(bounds.toFloat(), 10.0f);
+    g.setColour(juce::Colours::white);
     g.setFont(20.0f);
     g.drawText(componentName, labelSpace.withX(5), juce::Justification::left);
-    g.fillRoundedRectangle(bounds.toFloat(), 10.0f);
-    g.setColour(juce::Colours::aqua);
+    g.setColour(juce::Colours::white);
     g.drawRoundedRectangle(bounds.toFloat(), 10.0f, 2.0f);
+
 }
 
 void AdsrComponent::resized()
