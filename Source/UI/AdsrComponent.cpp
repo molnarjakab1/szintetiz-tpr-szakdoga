@@ -41,7 +41,7 @@ void AdsrComponent::resized()
     const auto bounds = getLocalBounds().reduced(10);
     const auto padding = 10;
     const auto sliderWidth = bounds.getWidth() / 4 - padding;
-    const auto sliderHeight = bounds.getHeight() - 65;   // a bit more room for +/- buttons
+    const auto sliderHeight = bounds.getHeight() - 65;
     const auto sliderStartX = padding + 5;
     const auto sliderStartY = 55;
     const auto labelYOffset = 20;
@@ -100,7 +100,7 @@ void AdsrComponent::setSliderWithLabel(juce::Slider& slider,
     label.setJustificationType(juce::Justification::centred);
     addAndMakeVisible(label);
 
-    // +/- buttons
+   
     minusButton.setButtonText("-");
     plusButton.setButtonText("+");
     minusButton.setColour(juce::TextButton::buttonColourId, juce::Colours::darkgrey);
@@ -113,15 +113,15 @@ void AdsrComponent::setSliderWithLabel(juce::Slider& slider,
         const double min = slider.getMinimum();
         const double max = slider.getMaximum();
 
-        // Interval from parameter/slider (0 if continuous)
+       
         double baseStep = slider.getInterval();
 
-        // Fallback for continuous: 1% of range
+       
         double fineStep = (max - min) * 0.01;
         if (fineStep <= 0.0)
             fineStep = 0.001;
 
-        // Use whichever is larger so we always cross at least one quantisation step
+   
         double step = baseStep > 0.0 ? std::max(baseStep, fineStep) : fineStep;
 
         double newVal = slider.getValue() + (up ? step : -step);

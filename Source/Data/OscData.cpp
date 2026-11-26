@@ -13,22 +13,19 @@ void OscData::setWaveType (const int choice)
     switch (choice)
     {
         case 0:
-            // Sine
             initialise ([](float x) { return std::sin (x); });
             break;
             
         case 1:
-            // Saw wave
             initialise ([](float x) { return x / juce::MathConstants<float>::pi; });
             break;
             
         case 2:
-            // Square wave
             initialise ([](float x) { return x < 0.0f ? -1.0f : 1.0f; });
             break;
             
         default:
-            jassertfalse;   // You're not supposed to be here!
+            jassertfalse;  
             break;
     }
 }

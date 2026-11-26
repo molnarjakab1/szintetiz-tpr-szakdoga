@@ -11,7 +11,7 @@ public:
     void resized() override;
 
 private:
-    juce::Label title{ "fxTitle", "Effektek" };
+    juce::Label title{ "fxTitle", "Effects" };
 
     juce::Viewport viewport;
     juce::Component slotContainer;

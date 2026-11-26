@@ -90,30 +90,7 @@ void FxComponent::paint(juce::Graphics& g)
 
 
 
-//void FxComponent::paint(juce::Graphics& g)
-//{
-//    auto bounds = getLocalBounds().reduced(5);
-//
-//    g.setColour(juce::Colour::fromRGB(20, 20, 20));
-//    g.fillRoundedRectangle(bounds.toFloat(), 8.0f);
-//
-//    g.setColour(juce::Colours::white);
-//    g.setFont(16.0f);
-//    g.drawText("Effektek", bounds.removeFromTop(20), juce::Justification::centred);
-//
-//    g.setColour(juce::Colours::darkgrey);
-//    g.drawRoundedRectangle(distArea.toFloat(), 6.0f, 1.5f);
-//    g.drawRoundedRectangle(chorusArea.toFloat(), 6.0f, 1.5f);
-//    g.drawRoundedRectangle(delayArea.toFloat(), 6.0f, 1.5f);
-//    g.drawRoundedRectangle(reverbArea.toFloat(), 6.0f, 1.5f);
-//
-//    g.setFont(14.0f);
-//    g.setColour(juce::Colours::white);
-//    g.drawText("Distortion", distArea.reduced(4).removeFromTop(20), juce::Justification::centredLeft);
-//    g.drawText("Chorus", chorusArea.reduced(4).removeFromTop(20), juce::Justification::centredLeft);
-//    g.drawText("Delay", delayArea.reduced(4).removeFromTop(20), juce::Justification::centredLeft);
-//    g.drawText("Reverb", reverbArea.reduced(4).removeFromTop(20), juce::Justification::centredLeft);
-//}
+
 void FxComponent::resized()
 {
     auto area = getLocalBounds().reduced(10);
@@ -148,77 +125,7 @@ void FxComponent::resized()
 
 
 
-//void FxComponent::resized()
-//{
-//    auto area = getLocalBounds().reduced(10);
-//    area.removeFromTop(24);
-//
-//    const int gap = 8;
-//    const int colW = (area.getWidth() - 3 * gap) / 4;
-//
-//    distArea = { area.getX(),                     area.getY(), colW, area.getHeight() };
-//    chorusArea = { distArea.getRight() + gap,       area.getY(), colW, area.getHeight() };
-//    delayArea = { chorusArea.getRight() + gap,     area.getY(), colW, area.getHeight() };
-//    reverbArea = { delayArea.getRight() + gap,      area.getY(), colW, area.getHeight() };
-//
-//    auto place = [](juce::Rectangle<int> box,
-//        juce::Slider& slider,
-//        juce::Label& label,
-//        juce::TextButton& minusButton,
-//        juce::TextButton& plusButton)
-//    {
-//        auto inner = box.reduced(10, 28);
-//        int knobSize = juce::jmin(inner.getWidth(), inner.getHeight() - 36); // leave room for buttons
-//
-//        slider.setBounds(inner.withSizeKeepingCentre(knobSize, knobSize));
-//        label.setBounds(slider.getX(), slider.getBottom() + 2, slider.getWidth(), 16);
-//
-//        const int btnH = 16;
-//        const int btnW = slider.getWidth() / 2 - 2;
-//        int btnY = label.getBottom() + 2;
-//
-//        minusButton.setBounds(slider.getX(), btnY, btnW, btnH);
-//        plusButton.setBounds(slider.getX() + btnW + 4, btnY, btnW, btnH);
-//    };
-//
-//    place(distArea, distDrive, distLabel, distMinus, distPlus);
-//    place(delayArea, delayTime, delayTimeLbl, delayMinus, delayPlus);
-//
-//    place(chorusArea, chorusDepth, chorusDepthLbl, chorusDepthMinus, chorusDepthPlus);
-//    // manual placement for chorusRate below chorusDepth:
-//    {
-//        auto box = chorusArea.reduced(10, 28);
-//        int knobSize = 60;
-//        int y = chorusDepth.getBottom() + 24;
-//
-//        chorusRate.setBounds(box.withSizeKeepingCentre(knobSize, knobSize).withY(y));
-//        chorusRateLbl.setBounds(chorusRate.getX(), chorusRate.getBottom() + 2, chorusRate.getWidth(), 16);
-//
-//        int btnH = 16;
-//        int btnW = chorusRate.getWidth() / 2 - 2;
-//        int btnY = chorusRateLbl.getBottom() + 2;
-//
-//        chorusRateMinus.setBounds(chorusRate.getX(), btnY, btnW, btnH);
-//        chorusRatePlus.setBounds(chorusRate.getX() + btnW + 4, btnY, btnW, btnH);
-//    }
-//
-//    place(reverbArea, reverbRoom, reverbRoomLbl, reverbRoomMinus, reverbRoomPlus);
-//    {
-//        auto box = reverbArea.reduced(10, 28);
-//        int knobSize = 60;
-//        int y = reverbRoom.getBottom() + 24;
-//
-//        reverbMix.setBounds(box.withSizeKeepingCentre(knobSize, knobSize).withY(y));
-//        reverbMixLbl.setBounds(reverbMix.getX(), reverbMix.getBottom() + 2, reverbMix.getWidth(), 16);
-//
-//        int btnH = 16;
-//        int btnW = reverbMix.getWidth() / 2 - 2;
-//        int btnY = reverbMixLbl.getBottom() + 2;
-//
-//        reverbMixMinus.setBounds(reverbMix.getX(), btnY, btnW, btnH);
-//        reverbMixPlus.setBounds(reverbMix.getX() + btnW + 4, btnY, btnW, btnH);
-//    }
-//}
+
 void FxComponent::layoutPanel(const Panel& p)
 {
    
