@@ -139,56 +139,7 @@ bool TapSynthAudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts)
 }
 #endif
 
-//void TapSynthAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
-//{
-//    juce::ScopedNoDenormals noDenormals;
-//    auto totalNumInputChannels  = getTotalNumInputChannels();
-//    auto totalNumOutputChannels = getTotalNumOutputChannels();
-//
-//    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
-//        buffer.clear (i, 0, buffer.getNumSamples());
-//    
-//    {
-//        for (int i = 0; i < synth.getNumVoices(); ++i)
-//        {
-//            if (auto voice = dynamic_cast<SynthVoice*>(synth.getVoice(i)))
-//            {
-//                
-//                auto& oscWaveChoice = *apvts.getRawParameterValue ("OSC1WAVETYPE");
-//                
-//               
-//                auto& fmFreq = *apvts.getRawParameterValue ("OSC1FMFREQ");
-//                auto& fmDepth = *apvts.getRawParameterValue ("OSC1FMDEPTH");
-//                
-//               
-//                auto& attack = *apvts.getRawParameterValue ("ATTACK");
-//                auto& decay = *apvts.getRawParameterValue ("DECAY");
-//                auto& sustain = *apvts.getRawParameterValue ("SUSTAIN");
-//                auto& release = *apvts.getRawParameterValue ("RELEASE");
-//                
-//              
-//                auto& fAttack = *apvts.getRawParameterValue ("FILTERATTACK");
-//                auto& fDecay = *apvts.getRawParameterValue ("FILTERDECAY");
-//                auto& fSustain = *apvts.getRawParameterValue ("FILTERSUSTAIN");
-//                auto& fRelease = *apvts.getRawParameterValue ("FILTERRELEASE");
-//                
-//                
-//                auto& filterType = *apvts.getRawParameterValue ("FILTERTYPE");
-//                auto& cutoff = *apvts.getRawParameterValue ("FILTERFREQ");
-//                auto& resonance = *apvts.getRawParameterValue ("FILTERRES");
-//                
-//                
-//                voice->getOscillator().setWaveType (oscWaveChoice);
-//                voice->getOscillator().updateFm (fmFreq, fmDepth);
-//                voice->getAdsr().update (attack.load(), decay.load(), sustain.load(), release.load());
-//                voice->getFilterAdsr().update (fAttack.load(), fDecay.load(), fSustain.load(), fRelease.load());
-//                voice->updateFilter (filterType, cutoff, resonance);
-//            }
-//        }
-//    }
-//    
-//    synth.renderNextBlock (buffer, midiMessages, 0, buffer.getNumSamples());
-//}
+
 void TapSynthAudioProcessor::processBlock(juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
     juce::ScopedNoDenormals noDenormals;

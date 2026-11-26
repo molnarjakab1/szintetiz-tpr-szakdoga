@@ -27,25 +27,25 @@ private:
         juce::TextButton& minusButton,
         juce::TextButton& plusButton);
 
-    // Sliders
+
     juce::Slider attackSlider;
     juce::Slider decaySlider;
     juce::Slider sustainSlider;
     juce::Slider releaseSlider;
 
-    // Attachments
+ 
     std::unique_ptr<Attachment> attackAttachment;
     std::unique_ptr<Attachment> decayAttachment;
     std::unique_ptr<Attachment> sustainAttachment;
     std::unique_ptr<Attachment> releaseAttachment;
 
-    // Labels
+
     juce::Label attackLabel{ "Attack", "A" };
     juce::Label decayLabel{ "Decay",  "D" };
     juce::Label sustainLabel{ "Sustain","S" };
     juce::Label releaseLabel{ "Release","R" };
 
-    // +/- buttons for fine control
+ 
     juce::TextButton attackMinus{ "-" }, attackPlus{ "+" };
     juce::TextButton decayMinus{ "-" }, decayPlus{ "+" };
     juce::TextButton sustainMinus{ "-" }, sustainPlus{ "+" };

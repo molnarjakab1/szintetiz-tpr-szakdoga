@@ -31,7 +31,7 @@ void FilterComponent::paint (juce::Graphics& g)
     g.fillAll (juce::Colour::fromRGB(30,30,30));
     g.setColour (juce::Colours::whitesmoke);
     g.setFont (15.0f);
-    g.drawText ("Szuro", labelSpace.withX (5), juce::Justification::left);
+    g.drawText ("Filter", labelSpace.withX (5), juce::Justification::left);
     g.drawRoundedRectangle (bounds.toFloat(), 5.0f, 1.5f);
 }
 

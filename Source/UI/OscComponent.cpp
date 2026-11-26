@@ -4,7 +4,7 @@
 
 OscComponent::OscComponent (juce::AudioProcessorValueTreeState& apvts, juce::String waveSelectorId, juce::String fmFreqId, juce::String fmDepthId)
 {
-    juce::StringArray choices { "Szinusz", "Fureszfog", "Negyszog" };
+    juce::StringArray choices { "Sine", "Saw", "Square" };
     oscWaveSelector.addItemList (choices, 1);
     addAndMakeVisible (oscWaveSelector);
     
@@ -35,7 +35,7 @@ void OscComponent::paint (juce::Graphics& g)
     g.fillAll (juce::Colour::fromRGB(30,30,30));
     g.setColour (juce::Colours::lightgreen);
     g.setFont (15.0f);
-    g.drawText ("Oszcillator", labelSpace.withX (5), juce::Justification::left);
+    g.drawText ("Oscillator", labelSpace.withX (5), juce::Justification::left);
     g.drawRoundedRectangle (bounds.toFloat(), 5.0f, 1.5f);
 }
 

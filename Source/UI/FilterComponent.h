@@ -14,7 +14,7 @@ public:
     void resized() override;
 
 private:
-    juce::ComboBox filterTypeSelector { "Szuro tipus" };
+    juce::ComboBox filterTypeSelector { "Filter type" };
     
     
     std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> filterTypeSelectorAttachment;
