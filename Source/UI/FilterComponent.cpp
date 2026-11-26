@@ -28,11 +28,18 @@ void FilterComponent::paint (juce::Graphics& g)
     auto bounds = getLocalBounds().reduced (5);
     auto labelSpace = bounds.removeFromTop (25.0f);
     
-    g.fillAll (juce::Colour::fromRGB(30,30,30));
-    g.setColour (juce::Colours::whitesmoke);
-    g.setFont (15.0f);
-    g.drawText ("Filter", labelSpace.withX (5), juce::Justification::left);
-    g.drawRoundedRectangle (bounds.toFloat(), 5.0f, 1.5f);
+    juce::ColourGradient gradient(juce::Colour::fromRGB(20, 20, 30),
+        0, 0,
+        juce::Colour::fromRGB(10, 40, 60),
+        0, (float)getHeight(), false);
+    g.setGradientFill(gradient);
+    g.fillRoundedRectangle(bounds.toFloat(), 10.0f);
+    g.setColour(juce::Colours::white);
+    g.setFont(20.0f);
+    g.drawText("Filter", labelSpace.withX(5), juce::Justification::left);
+    g.setColour(juce::Colours::white);
+    g.drawRoundedRectangle(bounds.toFloat(), 10.0f, 2.0f);
+ 
 }
 
 void FilterComponent::resized()
@@ -86,7 +93,7 @@ void FilterComponent::setSliderWithLabel (juce::Slider& slider, juce::Label& lab
     
     attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, paramId, slider);
     
-    label.setColour (juce::Label::textColourId, juce::Colours::lightgrey);
+    label.setColour (juce::Label::textColourId, juce::Colours::white);
     label.setFont (juce::Font(13.0f, juce::Font::plain));
     label.setJustificationType (juce::Justification::centred);
     addAndMakeVisible (label);

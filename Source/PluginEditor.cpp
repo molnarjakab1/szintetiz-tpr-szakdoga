@@ -8,8 +8,8 @@ TapSynthAudioProcessorEditor::TapSynthAudioProcessorEditor (TapSynthAudioProcess
 : AudioProcessorEditor (&p)
 , audioProcessor (p)
 , osc (audioProcessor.apvts, "OSC1WAVETYPE", "OSC1FMFREQ", "OSC1FMDEPTH")
-, adsr ("Amplitudo burkologorbe", audioProcessor.apvts, "ATTACK", "DECAY", "SUSTAIN", "RELEASE")
-, filterAdsr ("Modulacias burkologorbe", audioProcessor.apvts, "FILTERATTACK", "FILTERDECAY", "FILTERSUSTAIN", "FILTERRELEASE")
+, adsr ("ADSR", audioProcessor.apvts, "ATTACK", "DECAY", "SUSTAIN", "RELEASE")
+, filterAdsr ("FM Modulation", audioProcessor.apvts, "FILTERATTACK", "FILTERDECAY", "FILTERSUSTAIN", "FILTERRELEASE")
 , filter (audioProcessor.apvts, "FILTERTYPE", "FILTERFREQ", "FILTERRES"), fxRack(audioProcessor.apvts)
 {
     setSize (1400, 600);
